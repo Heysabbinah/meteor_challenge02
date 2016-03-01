@@ -3,12 +3,27 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
 
-  {{> hello}}
+  {{> messages}} <!-- template name -->
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="messages">
+  <ul>
+  	{{#each messages}} <!-- spacebars -->
+  	{{> message}}
+  	{{/each}}
+  </ul>
+
+  <form>
+  	<textarea rows="1" cols="100"></textarea>
+  </form>
+
 </template>
+
+<template name="message">
+  <li>
+  	{{> message}}
+  </li>
+</template>
+
+
