@@ -27,9 +27,9 @@ Template.messages.helpers({ //here change name by messages because it's the temp
   }
 }
 
- });
+});
 
- Template.message.helpers //template message pr avoir le nom de l'user avec le message
+ Template.message.helpers({//template message pr avoir le nom de l'user avec le message
     user: function() {
       return Meteor.users.findOne({_id: this.user});
 
@@ -37,13 +37,14 @@ Template.messages.helpers({ //here change name by messages because it's the temp
 
  // show the time 
 
- time : function() {
-  return moment(this.timestamp).format('h:mm a');
+ time: function() {
+    return moment(this.timestamp).format('h:mm a');
  }
  });
 
- Accounts.ui.config({ // account user interface config
-  passwordSignupFields: "USERNAME_AND_OPTIONAL_EMAIL"
+// account user interface config
+ Accounts.ui.config({ 
+    passwordSignupFields: "USERNAME_AND_OPTIONAL_EMAIL"
  });
 
 }
