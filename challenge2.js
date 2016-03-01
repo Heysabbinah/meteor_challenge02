@@ -18,9 +18,10 @@ Template.messages.helpers({ //here change name by messages because it's the temp
       var value = instance.find('textarea').value; 
       instance.find('textarea').value = '';
 
+// ici pr inserer les messages et les voir apparaitre
     Messages.insert ({ // here the name of the template
       message: value,
-      timestamp: new date(),
+      timestamp: new Date(),
       // user: Meteor.userId()
     });
   }
