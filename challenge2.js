@@ -33,6 +33,12 @@ Template.messages.helpers({ //here change name by messages because it's the temp
     user: function() {
       return Meteor.users.findOne({_id: this.user});
 
+ },
+
+ // show the time 
+
+ time : function() {
+  return this.timestamp;
  }
  });
 
