@@ -15,6 +15,7 @@ Template.messages.helpers({ //here change name by messages because it's the temp
  Template.messages.events({
   'keypress textarea': function(e, instance) {
     if (e.keyCode == 13) { //enter key pressed
+      
       var value = instance.find('textarea').value; 
       instance.find('textarea').value = '';
 

@@ -9,7 +9,7 @@
 
 <template name="messages">
 
-	{{> loginButtons}} <!-- user interface account -->
+	{{> loginButtons align="right"}} <!-- user interface account -->
   <ul>
   	{{#each messages}} <!-- spacebars -->
   	{{> message}}
@@ -24,6 +24,7 @@
 
 <template name="message">
   <li>
+  	<img src="{{user.profile}}"/> <!-- here user picture -->
   	<div class="message-header">
   	{{user.username}} <span class="time">{{time}}</span>
   </div>
