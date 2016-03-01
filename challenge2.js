@@ -38,7 +38,7 @@ Template.messages.helpers({ //here change name by messages because it's the temp
  // show the time 
 
  time : function() {
-  return this.timestamp;
+  return moment(this.timestamp).format('h:mm a');
  }
  });
 
