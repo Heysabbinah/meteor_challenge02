@@ -5,6 +5,8 @@ body {
   margin: 0;
   padding-top: 53px;
   padding-bottom: 64px;
+  background-image: url(/geometric-cover2.jpg);
+  background-attachment: fixed;
 }
 
 aside {
@@ -41,4 +43,6 @@ form {
 
 ul {
 	background-color: #e1e1e1;
+	margin-left: 40px;
+	margin-right: 50px;
 }
