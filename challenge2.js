@@ -4,14 +4,29 @@ Messages = new Mongo.Collection('messages');
 
 if (Meteor.isClient) {
   // counter starts at 0
-  Session.setDefault('counter', 0);
-
-  Template.messages.helpers({ //here change name by messages because it's the template name
+  // Session.setDefault('counter', 0);
+Template.messages.helpers({ //here change name by messages because it's the template name
     messages: function () { // same here instead of counter
-      return Session.get('counter');
+     return Messages.find({});
     }
   });
- // define a helpers for the template
+
+ // define a helpers for the template here for update the message type in the textarea
+ Template.messages.events ({
+  'keypress textarea': function(e, instance) {
+    if (e.keyCode == 13) { //enter key pressed
+      var value = instance.find('textarea').value; 
+      instance.find('textarea').value = '';
+
+    Messages.insert ({ // here the name of the template
+      message: value,
+      timestamp: new date(),
+      // user: Meteor.userId()
+    });
+  }
+}
+
+ })
 
 }
 
